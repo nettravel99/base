@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Input, Menu } from "semantic-ui-react";
 import { db } from "../db/db";
-import App3 from "../containers/App3";
+import App from "../containers/App";
 import App1 from "../containers/App1";
 import App2 from "../containers/App2";
 import Wizard from "../containers/Wizard";
@@ -81,7 +81,7 @@ export default class MenuExampleSecondary extends Component {
           </Menu.Menu>
         </Menu>
 
-        <Route path="/home" component={App3} />
+        <Route path="/home" component={App} />
         <Route path="/message" exact component={App1} />
         <Route path="/getdata" component={Wizard} />
         <Route path="/hello" component={Hello} />
