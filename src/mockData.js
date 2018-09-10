@@ -11,7 +11,7 @@ const mockGraphqlData = [
             name: 'firstName',
             component: 'input',
             caption: 'First Name',
-            initialValue: 'Oleg',
+            initialValue: 'OlegMock',
             validationRule: '^(?!\\s*$).+'
           },
           {
@@ -32,7 +32,7 @@ const mockGraphqlData = [
             component: 'input',
             type: 'date',
             caption: 'Date of Birth',
-            initialValue: '26/07/1988'
+            initialValue: '2011-07-26'
           },
           {
             name: 'gender',
