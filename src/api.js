@@ -5,6 +5,9 @@ export default {
     login: credentials =>
       axios
         .post("http://127.0.0.1:3050/api/auth", { credentials })
-        .then(res => res.data.user)
+        .then(res => {
+          console.log("returned data = ", res.data.data);
+          return res.data.data;
+        })
   }
 };

@@ -31,11 +31,16 @@ export class LoginForm extends Component {
     this.setState({ errors }); // ES6 if errors:errors you can use only errors once.
     if (Object.keys(errors).length === 0) {
       this.setState({ loading: true });
-      this.props
-        .submit(this.state.data)
-        .catch(err =>
-          this.setState({ errors: err.response.data.errors, loading: false })
-        );
+      {
+        console.log("loading:", this.state.loading);
+        console.log("Data: ", this.state.data);
+
+        this.props
+          .submit(this.state.data)
+          .catch(err =>
+            this.setState({ errors: err.response.data.errors, loading: false })
+          );
+      }
     }
   };
 

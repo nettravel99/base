@@ -1,4 +1,4 @@
-import { USER_LOGGED_IN } from "../types";
+
 import api from "../api";
 
 // defining our thunk function that is a function that returns
@@ -12,6 +12,6 @@ export const login = credentials => dispatch =>
 
 // User Logged In action
 export const userLoggedIn = user => ({
-  type: USER_LOGGED_IN,
+  type: "USER_LOGGED_IN",
   user
 });
