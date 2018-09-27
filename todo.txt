@@ -1,0 +1,1 @@
+When you log out a call need to made to the server to register the time and information etc. 
