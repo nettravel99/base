@@ -2,22 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect} from 'react-redux'
 import PropTypes from 'prop-types'
-import {userLoggedOut} from '../../actions/auth'
-import store from "../../redux/store";
+import {logOut} from '../../actions/auth'
+
 
 // Note that isAuthenticated is passed in this function via props - we are decontructing it here. 
-const HomePage = ({isAuthenticated, userLoggedOut}) => (     
+const HomePage = ({isAuthenticated, logOut}) => (     
   <div>
     <h1>Home Page</h1>
-   { isAuthenticated ? <button onClick={logOut}> logout</button> : <Link to="/login">Login</Link>}
+   { isAuthenticated ? <button onClick={()=>logOut()}>  logout</button> : <Link to="/login">Login</Link>}
   </div>
 );
 
-function logOut()
-{
-  localStorage.removeItem('UserJWT')
-  store.dispatch(userLoggedOut());
-}
+
+
+
 function mapStateToProps(state) {
 
   return {
@@ -25,9 +23,12 @@ function mapStateToProps(state) {
   }
 }
 
+
+
 HomePage.propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired
+  isAuthenticated: PropTypes.bool.isRequired,
+
 };
 
 
-export default connect(mapStateToProps, {userLoggedOut})(HomePage);
+export default connect(mapStateToProps, {logOut})(HomePage);

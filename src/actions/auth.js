@@ -9,8 +9,18 @@ import api from "../api";
 // we get back the res - results from the promise and expect the res.data.user
 export const login = credentials => dispatch =>
     api.user.login(credentials).then(user =>{ 
+      console.log("Add to local storage", user.token)
       localStorage.UserJWT = user.token;
       dispatch(userLoggedIn(user))});
+
+
+export const logOut = () => dispatch =>
+     {
+        localStorage.removeItem('UserJWT') 
+        dispatch(userLoggedOut())
+      
+      };
+
 
 // User Logged In action
 export const userLoggedIn = user => ({
@@ -19,7 +29,8 @@ export const userLoggedIn = user => ({
 });
 
 
-// User Logged In action
+
+// User Logged Out action
 export const userLoggedOut = () => ({
   type: "USER_LOGGED_OUT",
   user: {}
