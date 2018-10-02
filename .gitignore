@@ -5,7 +5,7 @@
 /BACKUP
 # testing
 /coverage
-
+/semantic
 # production
 /build
 

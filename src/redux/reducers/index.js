@@ -1,9 +1,5 @@
-import { combineReducers } from "redux";
-
-import { reducer } from "redux-form";
+import {combineReducers} from "redux";
 import user from "./user";
+import {reducer} from "redux-form";
 
-export default combineReducers({
-  user, // Here we have a function that returns an empty object.
-  form: reducer
-});
+export default combineReducers({user, form: reducer});
